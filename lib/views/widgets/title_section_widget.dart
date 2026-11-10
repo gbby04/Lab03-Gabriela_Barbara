@@ -51,14 +51,14 @@ class TitleSectionWidget extends StatelessWidget {
               padding: const EdgeInsets.all(6.0),
               child: Row(
                 children: [
-                  // Filled yellow star icon
-                  const Icon(
-                    Icons.star,
-                    color: Colors.amber,
+                  // Toggles between solid filled star and outline star
+                  Icon(
+                    isStarred ? Icons.star : Icons.star_border,
+                    color: isStarred ? Colors.amber : Colors.amber.shade700,
                     size: 26,
                   ),
                   const SizedBox(width: 4),
-                  // Standard theme text color for the number
+                  // Keeps standard theme text color for the rating count
                   Text(
                     '$starCount',
                     style: const TextStyle(
